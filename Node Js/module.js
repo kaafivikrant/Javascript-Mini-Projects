@@ -35,7 +35,7 @@
 
 //File system module
 
-const fs = require('fs');
+//const fs = require('fs');
 
 //Making the folder
 
@@ -68,14 +68,68 @@ const fs = require('fs');
 
 //Read a file
 
-fs.readFile(path.join(__dirname,'test','test.txt'),'utf-8',(err,data)=>{
-    if(err){
-        throw err
-    }
-    // const content = Buffer.from(data);
+// fs.readFile(path.join(__dirname,'test','test.txt'),'utf-8',(err,data)=>{
+//     if(err){
+//         throw err
+//     }
+//     // const content = Buffer.from(data);
+
+//     // console.log('Data:-');
+//     // console.log(content.toString());
+
+//     console.log(data);
+// })
+
+
 
     // console.log('Data:-');
     // console.log(content.toString());
 
-    console.log(data);
+//Operating system
+
+//const os = require('os');
+
+//console.log('OS Type:-',os.type());
+
+//console.log('Platform Type:-',os.platform());
+
+//console.log('CPU Arch:-',os.arch());
+
+//console.log('CPU Detail', os.cpus());
+
+//console.log('Free Memory:-', os.freemem());
+
+//console.log('Total Memory:-', os.totalmem());
+
+//console.log('Up Time:-', os.uptime());
+
+//Events Module
+
+ const Emitter = require('events');
+// const MyEmitter = new Emitter();
+
+// MyEmitter.on('Vikrant', (data)=>{
+//     console.log(data);
+// })
+
+// MyEmitter.emit('Vikrant',{
+//     name: 'Vikrant',
+//     profile: 'Student'
+// });
+
+class Auth extends Emitter{
+    register(username){
+        console.log('Registered Successfully');
+        this.emit('registered',username);
+    }
+}
+
+const auth = new Auth();
+
+//Listen
+
+auth.on('registered',(data)=>{
+    console.log(`Sending Email ${data}`);
 })
+
+auth.register('Vikrant');
