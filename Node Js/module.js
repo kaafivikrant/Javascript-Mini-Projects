@@ -105,7 +105,7 @@
 
 //Events Module
 
- const Emitter = require('events');
+// const Emitter = require('events');
 // const MyEmitter = new Emitter();
 
 // MyEmitter.on('Vikrant', (data)=>{
@@ -117,19 +117,30 @@
 //     profile: 'Student'
 // });
 
-class Auth extends Emitter{
-    register(username){
-        console.log('Registered Successfully');
-        this.emit('registered',username);
-    }
-}
+// class Auth extends Emitter{
+//     register(username){
+//         console.log('Registered Successfully');
+//         this.emit('registered',username);
+//     }
+// }
 
-const auth = new Auth();
+// const auth = new Auth();
 
-//Listen
+// //Listen
 
-auth.on('registered',(data)=>{
-    console.log(`Sending Email ${data}`);
-})
+// auth.on('registered',(data)=>{
+//     console.log(`Sending Email ${data}`);
+// })
 
-auth.register('Vikrant');
+// auth.register('Vikrant');
+
+
+// //Welcome Email
+
+// auth.on('registered',(data)=>{
+//     console.log(`Welcome Email to ${data}`);
+// })
+
+// auth.register('Vikrant');
+
+
