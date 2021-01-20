@@ -24,3 +24,4 @@ app.get('/',(req,res)=>res.send('Hello from Homepage !!'));
 app.listen(PORT, ()=>console.log(`Server Running on port: http://localhost:${PORT}`));
 //This is the basic server on localhost using node js, express js and nodemon
 
+
